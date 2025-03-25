@@ -1,9 +1,36 @@
 function ListGroup() {
+  let items = [
+    "Delhi",
+    "Noida",
+    "Gurugram",
+    "Mumbai",
+    "Pune",
+    "Bangalore",
+    "Hyderabad",
+    "Chennai",
+    "Kolkata",
+    "Jaipur",
+  ];
+  //items = [];
+
+  if (items.length === 0)
+    return (
+      <>
+        <h1>List</h1> <p>No items found</p>
+      </>
+    );
+
   return (
-    <ul className="list-group">
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">A second item</li>
-    </ul>
+    <>
+      <h1>List</h1>
+      <ul className="list-group">
+        {items.map((item) => (
+          <li className="list-group-item" key={item}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
